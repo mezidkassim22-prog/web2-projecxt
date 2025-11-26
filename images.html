@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Images Documentation</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Custom Styles for Code Block and Layout -->
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa; 
+        }
+        .container-fluid {
+            max-width: 900px;
+        }
+        /* VS Code Dark Theme Look for Code Block */
+        .code-block {
+            font-family: 'Consolas', 'Monaco', monospace; 
+            background-color: #1e1e1e; 
+            color: #d4d4d4; 
+        }
+        /* Custom Syntax Highlighting Classes (Hex colors for fidelity) */
+        .c-tag { color: #80d0ff; } 
+        .c-attr { color: #9cdcfe; } 
+        .c-val { color: #ce9178; } 
+        .c-bool { color: #569cd6; } 
+        .c-comment { color: #6a9955; }
+        
+        /* Custom styling for image boundaries in the demo */
+        .img-demo-container {
+            border: 2px dashed #adb5bd;
+            padding: 1rem;
+            border-radius: .5rem;
+            background-color: #fff;
+        }
+        .img-demo-container img {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid mt-5">
+        <section id="images_component">
+            <h1 class="h2 text-primary border-bottom pb-3 mb-4"> Images and Figures</h1>
+            
+            <!-- Collapse Trigger Button for this documentation section -->
+            <button class="btn btn-primary mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#imagesDocumentation" aria-expanded="true" aria-controls="imagesDocumentation">
+                Toggle Image Details
+            </button>
+
+            <!-- Main Documentation Content, wrapped in Collapse -->
+            <div class="collapse show" id="imagesDocumentation">
+                
+                <p class="lead mt-3 text-secondary">Bootstrap provides utility classes to ensure images are responsive, properly styled, and easily placed within `<figure>` elements.</p>
+                
+                <ul class="list-unstyled mb-4">
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span> 
+                        <p class="mb-0"><strong>Responsive Images:</strong> The <code>.img-fluid</code> class is essential. It applies <code>max-width: 100%;</code> and <code>height: auto;</code> to ensure the image scales nicely to its parent element.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>Shapes:</strong> Use <code>.rounded</code>, <code>.rounded-circle</code>, or <code>.rounded-pill</code> to quickly change the border-radius of the image.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>Figures:</strong> Use the HTML5 <code>&lt;figure&gt;</code> component with the <code>.figure</code> class to provide captions using <code>.figure-caption</code>.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>Alignment:</strong> Use utility classes like <code>.float-start</code>, <code>.float-end</code>, or the combination <code>.mx-auto .d-block</code> for centering block-level images.</p>
+                    </li>
+                </ul>
+
+                <!-- Main Content Card with a stronger shadow and defined border -->
+                <div class="card shadow-lg p-4 bg-white rounded-4 border border-secondary-subtle">
+                    <h3 class="h5 mb-3 text-success border-bottom pb-2 fw-bold">Live Component Preview: Image Styles</h3>
+
+                    <!-- LIVE DEMO: Images -->
+                    <div class="img-demo-container d-grid gap-4">
+                        
+                        <!-- 1. Fluid & Rounded Image -->
+                        <div>
+                            <h4 class="h6 text-primary mb-3 fw-semibold">1. Responsive and Rounded Image</h4>
+                            <img src="https://placehold.co/400x200/495057/ffffff?text=Image+Fluid+by+Abdulmejid" class="img-fluid rounded shadow-sm" alt="Responsive image example">
+                            <p class="small text-muted mt-2 mb-0">Note: This image scales with the container width.</p>
+                        </div>
+
+                        <!-- 2. Rounded Circle & Centered -->
+                        <div class="text-center">
+                            <h4 class="h6 text-primary mb-3 fw-semibold">2. Rounded Circle and Centered</h4>
+                            <img src="https://placehold.co/150x150/0d6efd/ffffff?text=Circle+by+Abdulmejid" class="rounded-circle mx-auto d-block shadow" alt="Circle image example">
+                        </div>
+
+                        <!-- 3. Figure with Caption -->
+                        <div>
+                            <h4 class="h6 text-primary mb-3 fw-semibold">3. Figure with Caption</h4>
+                            <figure class="figure mx-auto d-block" style="max-width: 300px;">
+                                <img src="https://placehold.co/300x180/198754/ffffff?text=Figure+by+Abdulmejid" class="figure-img img-fluid rounded" alt="A placeholder image within a figure tag.">
+                                <figcaption class="figure-caption text-center">A caption for the image figure.</figcaption>
+                            </figure>
+                        </div>
+
+                    </div>
+
+                    <!-- SOURCE CODE DISPLAY: Using custom CSS classes for high-fidelity VS Code theme look -->
+                    <h3 class="h5 mt-5 mb-3 text-secondary border-bottom pb-2 fw-bold">HTML Source Code</h3>
+                    <pre class="p-4 rounded-3 shadow-lg overflow-auto border border-info code-block"><code>
+<span class="c-tag">&lt;!--</span> <span class="c-comment">1. Responsive and Rounded Image</span> <span class="c-tag">--&gt;</span>
+<span class="c-tag">&lt;img</span> <span class="c-attr">src</span>=<span class="c-val">"..."</span> <span class="c-attr">class</span>=<span class="c-val">"img-fluid rounded"</span> <span class="c-attr">alt</span>=<span class="c-val">"..."</span><span class="c-tag">&gt;</span>
+
+<span class="c-tag">&lt;!--</span> <span class="c-comment">2. Rounded Circle and Centered (for block elements)</span> <span class="c-tag">--&gt;</span>
+<span class="c-tag">&lt;img</span> <span class="c-attr">src</span>=<span class="c-val">"..."</span> <span class="c-attr">class</span>=<span class="c-val">"rounded-circle mx-auto d-block"</span> <span class="c-attr">style</span>=<span class="c-val">"width: 150px;"</span> <span class="c-attr">alt</span>=<span class="c-val">"..."</span><span class="c-tag">&gt;</span>
+
+<span class="c-tag">&lt;!--</span> <span class="c-comment">3. Figure with Caption</span> <span class="c-tag">--&gt;</span>
+<span class="c-tag">&lt;figure</span> <span class="c-attr">class</span>=<span class="c-val">"figure"</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;img</span> <span class="c-attr">src</span>=<span class="c-val">"..."</span> <span class="c-attr">class</span>=<span class="c-val">"figure-img img-fluid rounded"</span> <span class="c-attr">alt</span>=<span class="c-val">"..."</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;figcaption</span> <span class="c-attr">class</span>=<span class="c-val">"figure-caption"</span><span class="c-tag">&gt;</span>A descriptive caption.<span class="c-tag">&lt;/figcaption&gt;</span>
+<span class="c-tag">&lt;/figure&gt;</span>
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Include Bootstrap JS bundle for Collapse functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

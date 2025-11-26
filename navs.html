@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Navs, Tabs, and Pills Documentation</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Custom Styles for Code Block and Layout -->
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa; 
+        }
+        .container-fluid {
+            max-width: 900px;
+        }
+        /* VS Code Dark Theme Look for Code Block */
+        .code-block {
+            font-family: 'Consolas', 'Monaco', monospace; 
+            background-color: #1e1e1e; 
+            color: #d4d4d4; 
+        }
+        /* Custom Syntax Highlighting Classes (Hex colors for fidelity) */
+        .c-tag { color: #80d0ff; } 
+        .c-attr { color: #9cdcfe; } 
+        .c-val { color: #ce9178; } 
+        .c-bool { color: #569cd6; } 
+        .c-comment { color: #6a9955; }
+        
+        /* Demo specific styling */
+        .nav-demo-container {
+            border: 2px dashed #adb5bd;
+            padding: 1.5rem;
+            border-radius: .5rem;
+            background-color: #fff;
+        }
+        .tab-content {
+            border: 1px solid #dee2e6;
+            border-top: none; /* Connects visually to the tabs above */
+            padding: 1rem;
+            border-radius: 0 0 .5rem .5rem;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid mt-5">
+        <section id="navs_component">
+            <h1 class="h2 text-primary border-bottom pb-3 mb-4">20. Navs, Tabs, and Pills</h1>
+            
+            <!-- Collapse Trigger Button for this documentation section -->
+            <button class="btn btn-primary mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#navsDocumentation" aria-expanded="true" aria-controls="navsDocumentation">
+                Toggle Navs Details
+            </button>
+
+            <!-- Main Documentation Content, wrapped in Collapse -->
+            <div class="collapse show" id="navsDocumentation">
+                
+                <p class="lead mt-3 text-secondary">Bootstrap's nav components provide flexible, standardized markup for building various navigation patterns like tabs, pills, and basic link lists.</p>
+                
+                
+                <ul class="list-unstyled mb-4">
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span> 
+                        <p class="mb-0"><strong>Base Class:</strong> All navs start with <code>.nav</code> on the parent <code>&lt;ul&gt;</code> or <code>&lt;nav&gt;</code> element, and each link uses the <code>.nav-item</code> and <code>.nav-link</code> classes.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>Tabs:</strong> Use the <code>.nav-tabs</code> class on the parent element for a traditional tabbed interface look.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>Pills:</strong> Use the <code>.nav-pills</code> class for rounded, button-like navigation items, often used for secondary navigation.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>JavaScript Integration:</strong> To make tabs/pills functional (switching panels), you need to add JavaScript attributes (<code>data-bs-toggle="tab"</code>/<code>"pill"</code>) and match the link's <code>href</code> to the target panel's <code>id</code>.</p>
+                    </li>
+                </ul>
+
+                <!-- Main Content Card with a stronger shadow and defined border -->
+                <div class="card shadow-lg p-4 bg-white rounded-4 border border-secondary-subtle">
+                    <h3 class="h5 mb-3 text-success border-bottom pb-2 fw-bold">Live Component Preview: Functional Tabs</h3>
+
+                    <!-- LIVE DEMO: Functional Tabs -->
+                    <div class="nav-demo-container">
+                        
+                        <!-- Nav Tabs List -->
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link disabled" tabindex="-1" aria-disabled="true">Disabled</button>
+                            </li>
+                        </ul>
+                        
+                        <!-- Tab Content Panels -->
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab">
+                                <p class="mb-0">This is the content for the Home tab. It is shown by default. Navs are great for organizing large amounts of content into distinct sections.</p>
+                            </div>
+                            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab">
+                                <p class="mb-0">Profile content goes here. The <code>.nav-tabs</code> style is perfect for interface components.</p>
+                            </div>
+                            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab">
+                                <p class="mb-0">Contact information or a form is visible here. This content is lazy-loaded by Bootstrap's JavaScript.</p>
+                            </div>
+                        </div>
+
+                        <!-- Pills Example (Static, non-functional for simplicity) -->
+                        <h4 class="h6 text-primary mt-4 mb-3 fw-semibold border-top pt-3">Pills Example</h4>
+                        <ul class="nav nav-pills justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Primary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Secondary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Tertiary</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- SOURCE CODE DISPLAY: Using custom CSS classes for high-fidelity VS Code theme look -->
+                    <h3 class="h5 mt-5 mb-3 text-secondary border-bottom pb-2 fw-bold">HTML Source Code (Tabs with JavaScript)</h3>
+                    <pre class="p-4 rounded-3 shadow-lg overflow-auto border border-info code-block"><code>
+<span class="c-tag">&lt;!--</span> <span class="c-comment">1. Tab Navigation Links</span> <span class="c-tag">--&gt;</span>
+<span class="c-tag">&lt;ul</span> <span class="c-attr">class</span>=<span class="c-val">"nav nav-tabs"</span> <span class="c-attr">id</span>=<span class="c-val">"myTab"</span> <span class="c-attr">role</span>=<span class="c-val">"tablist"</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;li</span> <span class="c-attr">class</span>=<span class="c-val">"nav-item"</span><span class="c-tag">&gt;</span>
+        <span class="c-tag">&lt;button</span> <span class="c-attr">class</span>=<span class="c-val">"nav-link active"</span> <span class="c-attr">id</span>=<span class="c-val">"home-tab"</span> 
+                <span class="c-attr">data-bs-toggle</span>=<span class="c-val">"tab"</span> <span class="c-attr">data-bs-target</span>=<span class="c-val">"#home-tab-pane"</span> 
+                <span class="c-attr">type</span>=<span class="c-val">"button"</span><span class="c-tag">&gt;</span>Home<span class="c-tag">&lt;/button&gt;</span>
+    <span class="c-tag">&lt;/li&gt;</span>
+    <span class="c-tag">&lt;li</span> <span class="c-attr">class</span>=<span class="c-val">"nav-item"</span><span class="c-tag">&gt;</span>... Profile Tab ...<span class="c-tag">&lt;/li&gt;</span>
+<span class="c-tag">&lt;/ul&gt;</span>
+
+<span class="c-tag">&lt;!--</span> <span class="c-comment">2. Tab Content Panels</span> <span class="c-tag">--&gt;</span>
+<span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"tab-content"</span> <span class="c-attr">id</span>=<span class="c-val">"myTabContent"</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"tab-pane fade show active"</span> <span class="c-attr">id</span>=<span class="c-val">"home-tab-pane"</span> 
+         <span class="c-attr">role</span>=<span class="c-val">"tabpanel"</span> <span class="c-attr">aria-labelledby</span>=<span class="c-val">"home-tab"</span><span class="c-tag">&gt;</span>
+        <span class="c-comment">&lt;!-- Content for Home --&gt;</span>
+    <span class="c-tag">&lt;/div&gt;</span>
+    <span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"tab-pane fade"</span> <span class="c-attr">id</span>=<span class="c-val">"profile-tab-pane"</span> <span class="c-tag">&gt;</span>
+        <span class="c-comment">&lt;!-- Content for Profile --&gt;</span>
+    <span class="c-tag">&lt;/div&gt;</span>
+<span class="c-tag">&lt;/div&gt;</span>
+
+<span class="c-tag">&lt;!--</span> <span class="c-comment">3. Pills Example</span> <span class="c-tag">--&gt;</span>
+<span class="c-tag">&lt;ul</span> <span class="c-attr">class</span>=<span class="c-val">"nav nav-pills justify-content-center"</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;li</span> <span class="c-attr">class</span>=<span class="c-val">"nav-item"</span><span class="c-tag">&gt;</span>
+        <span class="c-tag">&lt;a</span> <span class="c-attr">class</span>=<span class="c-val">"nav-link active"</span> <span class="c-attr">href</span>=<span class="c-val">"#"</span><span class="c-tag">&gt;</span>Primary<span class="c-tag">&lt;/a&gt;</span>
+    <span class="c-tag">&lt;/li&gt;</span>
+<span class="c-tag">&lt;/ul&gt;</span>
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Include Bootstrap JS bundle for Tabs/Pills functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Forms Documentation</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Custom Styles for Code Block and Layout -->
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa; 
+        }
+        .container-fluid {
+            max-width: 900px;
+        }
+        /* VS Code Dark Theme Look for Code Block */
+        .code-block {
+            font-family: 'Consolas', 'Monaco', monospace; 
+            background-color: #1e1e1e; 
+            color: #d4d4d4; 
+        }
+        /* Custom Syntax Highlighting Classes (Hex colors for fidelity) */
+        .c-tag { color: #80d0ff; } 
+        .c-attr { color: #9cdcfe; } 
+        .c-val { color: #ce9178; } 
+        .c-bool { color: #569cd6; } 
+        .c-comment { color: #6a9955; }
+        
+        /* Ensures inputs are responsive and styled */
+        .form-control, .form-select {
+            border-radius: .3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid mt-5">
+        <section id="forms_component">
+            <h1 class="h2 text-primary border-bottom pb-3 mb-4"> Form Controls and Structure</h1>
+            
+            <!-- Collapse Trigger Button for this documentation section -->
+            <button class="btn btn-primary mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#formsDocumentation" aria-expanded="true" aria-controls="formsDocumentation">
+                Toggle Form Details
+            </button>
+
+            <!-- Main Documentation Content, wrapped in Collapse -->
+            <div class="collapse show" id="formsDocumentation">
+                
+                <p class="lead mt-3 text-secondary">Bootstrap forms provide robust styling and responsiveness for all standard form controls, including inputs, selects, and textareas.</p>
+                
+                
+                <ul class="list-unstyled mb-4">
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span> 
+                        <p class="mb-0"><strong>Standard Control:</strong> All text-based inputs (text, email, password, etc.), <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements should use the <code>.form-control</code> or <code>.form-select</code> classes, respectively.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>Labels:</strong> Use the <code>.form-label</code> class on <code>&lt;label&gt;</code> elements to ensure correct styling, margins, and accessibility.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>Help Text:</strong> Contextual help messages should be placed under the input and use the <code>.form-text</code> class for appropriate styling and smaller text size.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>Layout:</strong> Forms are best laid out using the Grid system (rows and columns) or by using layout helpers like **Floating Labels** (see component 15).</p>
+                    </li>
+                </ul>
+
+                <!-- Main Content Card with a stronger shadow and defined border -->
+                <div class="card shadow-lg p-4 bg-white rounded-4 border border-secondary-subtle">
+                    <h3 class="h5 mb-3 text-success border-bottom pb-2 fw-bold">Live Component Preview: Standard Form</h3>
+
+                    <!-- LIVE DEMO: Standard Form -->
+                    <div class="p-4 rounded-3 bg-light border">
+                        <form>
+                            <!-- Input with Label and Help Text -->
+                            <div class="mb-3">
+                                <label for="exampleEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleEmail" aria-describedby="emailHelp" placeholder="e.g., name@domain.com">
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                            </div>
+                            
+                            <!-- Password Input -->
+                            <div class="mb-3">
+                                <label for="examplePassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="examplePassword">
+                            </div>
+
+                            <!-- Textarea -->
+                            <div class="mb-3">
+                                <label for="exampleTextarea" class="form-label">Feedback</label>
+                                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                            </div>
+
+                            <!-- Checkbox -->
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck">
+                                <label class="form-check-label" for="exampleCheck">Check me out</label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+
+                    <!-- SOURCE CODE DISPLAY: Using custom CSS classes for high-fidelity VS Code theme look -->
+                    <h3 class="h5 mt-5 mb-3 text-secondary border-bottom pb-2 fw-bold">HTML Source Code</h3>
+                    <pre class="p-4 rounded-3 shadow-lg overflow-auto border border-info code-block"><code>
+<span class="c-tag">&lt;form</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;!--</span> <span class="c-comment">1. Email Input with Help Text</span> <span class="c-tag">--&gt;</span>
+    <span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"mb-3"</span><span class="c-tag">&gt;</span>
+        <span class="c-tag">&lt;label</span> <span class="c-attr">for</span>=<span class="c-val">"exampleEmail"</span> <span class="c-attr">class</span>=<span class="c-val">"form-label"</span><span class="c-tag">&gt;</span>Email address<span class="c-tag">&lt;/label&gt;</span>
+        <span class="c-tag">&lt;input</span> <span class="c-attr">type</span>=<span class="c-val">"email"</span> <span class="c-attr">class</span>=<span class="c-val">"form-control"</span> <span class="c-attr">id</span>=<span class="c-val">"exampleEmail"</span> 
+               <span class="c-attr">aria-describedby</span>=<span class="c-val">"emailHelp"</span><span class="c-tag">&gt;</span>
+        <span class="c-tag">&lt;div</span> <span class="c-attr">id</span>=<span class="c-val">"emailHelp"</span> <span class="c-attr">class</span>=<span class="c-val">"form-text"</span><span class="c-tag">&gt;</span>
+            We'll never share your email.
+        <span class="c-tag">&lt;/div&gt;</span>
+    <span class="c-tag">&lt;/div&gt;</span>
+
+    <span class="c-tag">&lt;!--</span> <span class="c-comment">2. Textarea Control</span> <span class="c-tag">--&gt;</span>
+    <span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"mb-3"</span><span class="c-tag">&gt;</span>
+        <span class="c-tag">&lt;label</span> <span class="c-attr">for</span>=<span class="c-val">"exampleTextarea"</span> <span class="c-attr">class</span>=<span class="c-val">"form-label"</span><span class="c-tag">&gt;</span>Feedback<span class="c-tag">&lt;/label&gt;</span>
+        <span class="c-tag">&lt;textarea</span> <span class="c-attr">class</span>=<span class="c-val">"form-control"</span> <span class="c-attr">id</span>=<span class="c-val">"exampleTextarea"</span> <span class="c-attr">rows</span>=<span class="c-val">"3"</span><span class="c-tag">&gt;&lt;/textarea&gt;</span>
+    <span class="c-tag">&lt;/div&gt;</span>
+
+    <span class="c-tag">&lt;!--</span> <span class="c-comment">3. Checkbox Control (uses .form-check)</span> <span class="c-tag">--&gt;</span>
+    <span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"mb-3 form-check"</span><span class="c-tag">&gt;</span>
+        <span class="c-tag">&lt;input</span> <span class="c-attr">type</span>=<span class="c-val">"checkbox"</span> <span class="c-attr">class</span>=<span class="c-val">"form-check-input"</span> <span class="c-attr">id</span>=<span class="c-val">"exampleCheck"</span><span class="c-tag">&gt;</span>
+        <span class="c-tag">&lt;label</span> <span class="c-attr">class</span>=<span class="c-val">"form-check-label"</span> <span class="c-attr">for</span>=<span class="c-val">"exampleCheck"</span><span class="c-tag">&gt;</span>Check me out<span class="c-tag">&lt;/label&gt;</span>
+    <span class="c-tag">&lt;/div&gt;</span>
+    
+    <span class="c-tag">&lt;button</span> <span class="c-attr">type</span>=<span class="c-val">"submit"</span> <span class="c-attr">class</span>=<span class="c-val">"btn btn-primary"</span><span class="c-tag">&gt;</span>Submit<span class="c-tag">&lt;/button&gt;</span>
+<span class="c-tag">&lt;/form&gt;</span>
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Include Bootstrap JS bundle for Collapse functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

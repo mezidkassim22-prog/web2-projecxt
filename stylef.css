@@ -1,0 +1,89 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+}
+
+header {
+    background-color: #1877f2;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header input {
+    width: 300px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+.sidebar, .rightbar {
+    width: 250px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.rightbar {
+    margin-left: auto;
+}
+
+.feed {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.post h3 {
+    margin: 0 0 10px 0;
+}
+
+.post p {
+    margin: 0;
+}
+
+.sidebar div, .rightbar div {
+    margin-bottom: 10px;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.sidebar div:hover, .rightbar div:hover {
+    background-color: #f0f2f5;
+    border-radius: 5px;
+}
+
+.rightbar h4 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #65676b;
+}

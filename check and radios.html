@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkboxes and Radios Documentation</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Custom Styles for Code Block and Layout -->
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container-fluid {
+            max-width: 900px;
+        }
+        /* VS Code Dark Theme Look */
+        .code-block {
+            font-family: 'Consolas', 'Monaco', monospace; 
+            background-color: #1e1e1e; /* VS Code dark theme background */
+            color: #d4d4d4; /* Default text color */
+        }
+        /* Custom Syntax Highlighting Classes (Hex colors for fidelity) */
+        .c-tag { color: #80d0ff; } /* Tag names like <div */
+        .c-attr { color: #9cdcfe; } /* Attributes like class */
+        .c-val { color: #ce9178; } /* Attribute values "text" */
+        .c-bool { color: #569cd6; } /* Boolean attributes like disabled/checked */
+        .c-comment { color: #6a9955; } /* Comments */
+    </style>
+</head>
+<body>
+    <div class="container-fluid mt-5">
+        <section id="check_and_radios">
+            <h1 class="h2 text-primary border-bottom pb-3 mb-4">Checkboxes and Radios Component Documentation</h1>
+            
+            <!-- Collapse Trigger Button -->
+            <button class="btn btn-primary mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#documentationContent" aria-expanded="true" aria-controls="documentationContent">
+                Toggle Component Details
+            </button>
+
+            <!-- Collapse Content Wrapper (starts open with 'show') -->
+            <div class="collapse show" id="documentationContent">
+                
+                <p class="lead mt-3 text-secondary">Short Explanation of Form Checks</p>
+                <!-- Enhanced list styling for better readability and structure -->
+                <ul class="list-unstyled mb-4">
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span> 
+                        <p class="mb-0"><strong>Custom Styling:</strong> Bootstrap automatically enhances the appearance of standard browser checkboxes and radio buttons using the <code>.form-check</code> class wrapper.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>Semantics:</strong> Checkboxes (<code>type="checkbox"</code>) allow users to select zero or more options from a list. Radio buttons (<code>type="radio"</code>) allow users to select exactly one option from a set with the same <code>name</code> attribute.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>Layout:</strong> Use the <code>.form-check-inline</code> class to lay out multiple checks or radios on the same horizontal line.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>States:</strong> The <code>disabled</code> attribute works on both inputs to prevent user interaction.</p>
+                    </li>
+                </ul>
+
+                <!-- Main Content Card with a stronger shadow and defined border -->
+                <div class="card shadow-lg p-4 bg-white rounded-4 border border-secondary-subtle">
+                    <h3 class="h5 mb-3 text-success border-bottom pb-2 fw-bold">Live Component Preview</h3>
+
+                    <!-- LIVE DEMO: Cleaner background and distinct border -->
+                    <div class="p-4 rounded-3 bg-light border">
+                        <h4 class="h6 text-primary mb-3 fw-semibold">Checkboxes:</h4>
+                        
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                                Default checkbox
+                            </label>
+                        </div>
+                        
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="disabledCheck1" disabled>
+                            <label class="form-check-label text-muted" for="disabledCheck1">
+                                Disabled checkbox
+                            </label>
+                        </div>
+                        
+                        <h4 class="h6 text-primary mb-3 fw-semibold">Radio Buttons (Grouped by 'plan'):</h4>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="plan" id="radioPlan1" checked>
+                            <label class="form-check-label" for="radioPlan1">
+                                Basic Plan ($10/mo)
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="plan" id="radioPlan2">
+                            <label class="form-check-label" for="radioPlan2">
+                                Premium Plan ($50/mo)
+                            </label>
+                        </div>
+
+                        <h4 class="h6 text-primary mb-3 fw-semibold">Inline Layout:</h4>
+                        <!-- Use d-flex and gap for better spacing of inline elements -->
+                        <div class="d-flex gap-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SOURCE CODE DISPLAY: Using custom CSS classes for high-fidelity VS Code theme look -->
+                    <h3 class="h5 mt-5 mb-3 text-secondary border-bottom pb-2 fw-bold">HTML Source Code</h3>
+                    <pre class="p-4 rounded-3 shadow-lg overflow-auto border border-info code-block"><code>
+<span class="c-tag">&lt;h4</span> <span class="c-attr">class</span>=<span class="c-val">"h6 text-muted mb-3"</span><span class="c-tag">&gt;</span>Checkboxes:<span class="c-tag">&lt;/h4&gt;</span>
+<span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"form-check mb-2"</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;input</span> <span class="c-attr">class</span>=<span class="c-val">"form-check-input"</span> <span class="c-attr">type</span>=<span class="c-val">"checkbox"</span> <span class="c-attr">value</span>=<span class="c-val">""</span> <span class="c-attr">id</span>=<span class="c-val">"defaultCheck1"</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;label</span> <span class="c-attr">class</span>=<span class="c-val">"form-check-label"</span> <span class="c-attr">for</span>=<span class="c-val">"defaultCheck1"</span><span class="c-tag">&gt;</span>
+        Default checkbox
+    <span class="c-tag">&lt;/label&gt;</span>
+<span class="c-tag">&lt;/div&gt;</span>
+
+<span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"form-check mb-3"</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;input</span> <span class="c-attr">class</span>=<span class="c-val">"form-check-input"</span> <span class="c-attr">type</span>=<span class="c-val">"checkbox"</span> <span class="c-attr">value</span>=<span class="c-val">""</span> <span class="c-attr">id</span>=<span class="c-val">"disabledCheck1"</span> <span class="c-bool">disabled</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;label</span> <span class="c-attr">class</span>=<span class="c-val">"form-check-label text-muted"</span> <span class="c-attr">for</span>=<span class="c-val">"disabledCheck1"</span><span class="c-tag">&gt;</span>
+        Disabled checkbox
+    <span class="c-tag">&lt;/label&gt;</span>
+<span class="c-tag">&lt;/div&gt;</span>
+
+<span class="c-tag">&lt;h4</span> <span class="c-attr">class</span>=<span class="c-val">"h6 text-muted mb-3"</span><span class="c-tag">&gt;</span>Radio Buttons:<span class="c-tag">&lt;/h4&gt;</span>
+
+<span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"form-check"</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;input</span> <span class="c-attr">class</span>=<span class="c-val">"form-check-input"</span> <span class="c-attr">type</span>=<span class="c-val">"radio"</span> <span class="c-attr">name</span>=<span class="c-val">"plan"</span> <span class="c-attr">id</span>=<span class="c-val">"radioPlan1"</span> <span class="c-bool">checked</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;label</span> <span class="c-attr">class</span>=<span class="c-val">"form-check-label"</span> <span class="c-attr">for</span>=<span class="c-val">"radioPlan1"</span><span class="c-tag">&gt;</span>
+        Basic Plan ($10/mo)
+    <span class="c-tag">&lt;/label&gt;</span>
+<span class="c-tag">&lt;/div&gt;</span>
+<span class="c-comment">&lt;!-- ... more radio buttons with the same 'name' attribute ... --&gt;</span>
+
+<span class="c-tag">&lt;h4</span> <span class="c-attr">class</span>=<span class="c-val">"h6 text-muted mb-3"</span><span class="c-tag">&gt;</span>Inline Layout:<span class="c-tag">&lt;/h4&gt;</span>
+<span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"d-flex gap-4"</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"form-check form-check-inline"</span><span class="c-tag">&gt;</span>
+        <span class="c-tag">&lt;input</span> <span class="c-attr">class</span>=<span class="c-val">"form-check-input"</span> <span class="c-attr">type</span>=<span class="c-val">"radio"</span> <span class="c-attr">name</span>=<span class="c-val">"inlineRadioOptions"</span> <span class="c-attr">id</span>=<span class="c-val">"inlineRadio1"</span> <span class="c-attr">value</span>=<span class="c-val">"option1"</span><span class="c-tag">&gt;</span>
+        <span class="c-tag">&lt;label</span> <span class="c-attr">class</span>=<span class="c-val">"form-check-label"</span> <span class="c-attr">for</span>=<span class="c-val">"inlineRadio1"</span><span class="c-tag">&gt;</span>Yes<span class="c-tag">&lt;/label&gt;</span>
+    <span class="c-tag">&lt;/div&gt;</span>
+    <span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"form-check form-check-inline"</span><span class="c-tag">&gt;</span>
+        <span class="c-tag">&lt;input</span> <span class="c-attr">class</span>=<span class="c-val">"form-check-input"</span> <span class="c-attr">type</span>=<span class="c-val">"radio"</span> <span class="c-attr">name</span>=<span class="c-val">"inlineRadioOptions"</span> <span class="c-attr">id</span>=<span class="c-val">"inlineRadio2"</span> <span class="c-attr">value</span>=<span class="c-val">"option2"</span><span class="c-tag">&gt;</span>
+        <span class="c-tag">&lt;label</span> <span class="c-attr">class</span>=<span class="c-val">"form-check-label"</span> <span class="c-attr">for</span>=<span class="c-val">"inlineRadio2"</span><span class="c-tag">&gt;</span>No<span class="c-tag">&lt;/label&gt;</span>
+    <span class="c-tag">&lt;/div&gt;</span>
+<span class="c-tag">&lt;/div&gt;</span>
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Include Bootstrap JS bundle for Collapse functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

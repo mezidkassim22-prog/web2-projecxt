@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+
+<h2 style="text-align: center;">this is my first calculator</h2>
+<style>
+.calculator {
+    width: 280px;
+    margin: 50px auto;
+    border: 5px solid #ccc;
+    border-radius: 5px;
+    overflow: visible;
+    background-color: #e6d6d6;
+    height: auto;
+}
+#display {
+    width: 100%;
+    border: rgb(0, 255, 191) solid 2px;
+    text-align: right;
+    font-size: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5,2fr);
+    gap: 2px;
+    background-color: #e9dbdb;
+}
+.buttons button {
+    padding: 15px;
+    front-size: 18px;
+    border: none;
+    background-color: #beacac ;
+    cursor: pointer;
+}
+.buttons button:hover {
+    background-color: #856e6e;
+}
+
+.btn-clear {
+  background-color: #e74c3c; /* red */
+  color: white;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+  
+<div class="calculator">
+    <input type="text" id="display" readonly>
+<div class="buttons">
+<button onclick="calculate()">=</button>
+<button onclick="appendToDisplay('/')">/</button>
+<button onclick="clearDisplay('C')">C</button>
+<button onclick="backspace()">&#8592;</button>
+<button onclick="appendToDisplay('*')">*</button>
+<button onclick="appendToDisplay('7')">7</button>
+<button onclick="appendToDisplay('8')">8</button>
+<button onclick="appendToDisplay('6')">6</button>
+<button onclick="appendToDisplay('4')">4</button>
+<button onclick="appendToDisplay('-')">-</button>
+<button onclick="appendToDisplay('5')">5</button>
+<button onclick="appendToDisplay('3')">3</button>
+<button onclick="appendToDisplay('2')">2</button>
+<button onclick="appendToDisplay('1')">1</button>  
+<button onclick="appendToDisplay('+')">+</button>
+<button onclick="appendToDisplay('9')">9</button>
+<button onclick="appendToDisplay('0')">0</button>
+<button onclick="appendToDisplay('.')">.</button>
+<button onclick="togglesign()">+/-</button>
+</div>
+</div>
+<script>
+let displayValue = '';
+
+function appendToDisplay(value) {
+    displayValue += value;
+    document.getElementById('display').value = displayValue;
+}
+
+function clearDisplay() {
+    displayValue = '';
+    document.getElementById('display').value = displayValue;
+}
+
+function calculate() {
+    try {
+        displayValue = eval(displayValue);
+        document.getElementById('display').value = displayValue;
+    } catch (error) {
+        document.getElementById('display').value = 'Error';
+    }
+}
+            
+    
+function backspace() {
+    displayValue= displayValue.slice(0, -1);
+    document.getElementById('display').value = displayValue;
+}
+function squareRoot() {
+    try {
+        display = Math.sqrt(eval(displayValue));
+} catch (error) {
+        document.getElementById('display').alue = 'Error';
+    }  
+}
+function square() {
+    try {
+        displayValue = Math.pow(eval(displayValue), 2);
+        document.getElementById('display').value = displayValue;
+    } catch (error) {
+        document.getElementById('display').value = 'Error';
+    }  
+}
+function toggleSign() {
+    if(displayValue.startsWith('-')) {
+        displayValue = displayValue.slice(1);
+    } else {
+        displayValue = '-' + displayValue;
+    }
+    document.getElementById('display').value = displayValue;
+}
+</script>
+</body>
+</html>

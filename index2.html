@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Page Layout</title>
+  <style>
+  
+
+    header {
+      background-color: #ff6666;
+      height: 15%;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      line-height: 100px;
+      width: 500px;
+    }
+
+    footer {
+      background-color: #6666ff;
+      height: 15%;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      line-height: 100px;
+      width: 500px;
+    }
+.center {
+      background-color: #66ff66;
+      height: 100%;
+      width: 60%;
+      float: left;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      line-height: calc(70vh - 20px);
+    }
+
+    .left {
+      background-color: #ffff66;
+      height: 100%;
+      width: 20%;
+      float: left;
+      text-align: center;
+      color: black;
+      font-size: 24px;
+      line-height: calc(70vh - 20px);
+    }
+
+    .right {
+      background-color: #66ffff;
+      height: 100%;
+      width: 20%;
+      float: left;
+      text-align: center;
+      color: black;
+      font-size: 24px;
+      line-height: calc(70vh - 20px);
+    }
+
+    .content {
+      height: 70vh;
+      width: 500px;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 500px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Header
+  </header>
+  <div class="content">
+    <div class="left">Left</div>
+    <div class="center">Center</div>
+    <div class="right">Right</div>
+  </div>
+  <footer>
+    Footer
+  </footer>
+</body>
+</html>

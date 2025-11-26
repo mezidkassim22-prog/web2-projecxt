@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Link Component</title>
+    <!-- Add Bootstrap CSS for styling (required for classes like btn, d-flex, etc.) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Simple styling to center the content */
+        body {
+            padding: 30px;
+            background-color: #f8f9fa;
+        }
+        .container-box {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-box">
+        <h1 class="h3 mb-4 text-primary">Buttons (Link Style) Explanation</h1>
+        
+        <div class="mb-4">
+            <h2 class="h5">Short Explanations:</h2>
+            <ul class="list-unstyled">
+                <li><strong>Purpose:</strong> It strips away the solid background, borders, and rounded corners of a typical Bootstrap button (e.g., <code>.btn-primary</code>).</li>
+                <li><strong>Appearance:</strong> The result is a text element that is underlined and uses the default link color (typically the theme's primary color).</li>
+                <li><strong>Behavior:</strong> It's especially useful when you need to retain the functionality of a button (like triggering JavaScript or form submission) but want a less prominent, link-like visual cue in the UI.</li>
+            </ul>
+        </div>
+        
+        <h2 class="h5 mt-5">1. Live Demo (The result of the code)</h2>
+        <div class="p-4 border rounded bg-light mb-5">
+            <!-- This is the live, runnable example of the code -->
+            <div class="d-flex flex-column gap-3">
+                <button type="button" class="btn btn-link">
+                    Click here (Default Link Button)
+                </button>
+            
+                <a href="#" class="btn btn-link text-success">
+                    View Details (Success Link)
+                </a>
+            
+                <button type="button" class="btn btn-link" disabled>
+                    Cannot Use (Disabled)
+                </button>
+            </div>
+        </div>
+
+        <h2 class="h5">2. HTML Source Code Display</h2>
+        <p class="text-muted">This is how you write the code above.</p>
+        
+        <!--
+        CRITICAL: To display the code, we use HTML Entities:
+        < is replaced with &lt;
+        > is replaced with &gt;
+        The <pre> tag preserves whitespace (indents/newlines).
+        -->
+        <pre class="bg-dark text-white p-3 rounded overflow-auto"><code>
+&lt;div class="d-flex flex-column gap-3"&gt;
+    &lt;button type="button" class="btn btn-link"&gt;
+        Click here (Default Link Button)
+    &lt;/button&gt;
+
+    &lt;a href="#" class="btn btn-link text-success"&gt;
+        View Details (Success Link)
+    &lt;/a&gt;
+
+    &lt;button type="button" class="btn btn-link" disabled&gt;
+        Cannot Use (Disabled)
+    &lt;/button&gt;
+&lt;/div&gt;
+        </code></pre>
+
+    </div>
+</body>
+</html>

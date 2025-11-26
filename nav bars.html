@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Navbar Documentation</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Custom Styles for Code Block and Layout -->
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa; 
+        }
+        .container-fluid {
+            max-width: 900px;
+        }
+        /* VS Code Dark Theme Look for Code Block */
+        .code-block {
+            font-family: 'Consolas', 'Monaco', monospace; 
+            background-color: #1e1e1e; 
+            color: #d4d4d4; 
+        }
+        /* Custom Syntax Highlighting Classes (Hex colors for fidelity) */
+        .c-tag { color: #80d0ff; } 
+        .c-attr { color: #9cdcfe; } 
+        .c-val { color: #ce9178; } 
+        .c-bool { color: #569cd6; } 
+        .c-comment { color: #6a9955; }
+    </style>
+</head>
+<body>
+    <div class="container-fluid mt-5">
+        <section id="navbar_component">
+            <h1 class="h2 text-primary border-bottom pb-3 mb-4">Navigation Bar (Navbar) Component</h1>
+            
+            <!-- Collapse Trigger Button for this documentation section -->
+            <button class="btn btn-primary mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDocumentation" aria-expanded="true" aria-controls="navbarDocumentation">
+                Toggle Navbar Details
+            </button>
+
+            <!-- Main Documentation Content, wrapped in Collapse -->
+            <div class="collapse show" id="navbarDocumentation">
+                
+                <p class="lead mt-3 text-secondary">The Navbar is a responsive navigation header, supporting branding, links, forms, and a collapse feature for mobile screens.</p>
+                
+                
+                <ul class="list-unstyled mb-4">
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span> 
+                        <p class="mb-0"><strong>Core Wrapper:</strong> Use <code>.navbar</code> and <code>.navbar-expand-*</code> (e.g., `md` or `lg`) to define the base styling and the breakpoint at which the menu collapses.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>Branding:</strong> The <code>.navbar-brand</code> class is used for your logo or site name. It provides standard padding and sizing.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>Toggler:</strong> The responsive collapse button uses <code>.navbar-toggler</code> and requires <code>data-bs-toggle="collapse"</code> and <code>data-bs-target</code> (matching the collapse container's ID).</p>
+                    </li>
+                    <li class="d-flex align-items-baseline mb-2"><span class="badge bg-success-subtle text-success me-2 rounded-pill">✓</span>
+                        <p class="mb-0"><strong>Nav Links:</strong> Links are placed inside a `<ul class="navbar-nav">` container, where each link uses the <code>.nav-link</code> class.</p>
+                    </li>
+                </ul>
+
+                <!-- Main Content Card with a stronger shadow and defined border -->
+                <div class="card shadow-lg p-0 bg-white rounded-4 border border-secondary-subtle overflow-hidden">
+                    <h3 class="h5 p-3 mb-0 text-success border-bottom fw-bold">Live Component Preview: Responsive Navbar</h3>
+
+                    <!-- LIVE DEMO: Navbar (Note: resize the preview window to see the mobile toggler) -->
+                    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+                        <div class="container-fluid">
+                            <!-- Brand -->
+                            <a class="navbar-brand text-info fw-bold" href="#">Navbar Demo</a>
+                            
+                            <!-- Toggler for mobile -->
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavCollapse" aria-controls="navbarNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            
+                            <!-- Links -->
+                            <div class="collapse navbar-collapse" id="navbarNavCollapse">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Features</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Pricing</a>
+                                    </li>
+                                </ul>
+
+                                <!-- Search Form -->
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-outline-info" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <!-- SOURCE CODE DISPLAY: Using custom CSS classes for high-fidelity VS Code theme look -->
+                    <h3 class="h5 mt-4 mb-3 px-3 text-secondary border-bottom pb-2 fw-bold">HTML Source Code</h3>
+                    <pre class="p-4 rounded-3 shadow-lg overflow-auto border border-info code-block m-3"><code>
+<span class="c-tag">&lt;nav</span> <span class="c-attr">class</span>=<span class="c-val">"navbar navbar-expand-lg bg-dark"</span> <span class="c-attr">data-bs-theme</span>=<span class="c-val">"dark"</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"container-fluid"</span><span class="c-tag">&gt;</span>
+        <span class="c-tag">&lt;a</span> <span class="c-attr">class</span>=<span class="c-val">"navbar-brand"</span> <span class="c-attr">href</span>=<span class="c-val">"#"</span><span class="c-tag">&gt;</span>Navbar Demo<span class="c-tag">&lt;/a&gt;</span>
+        
+        <span class="c-tag">&lt;!--</span> <span class="c-comment">Responsive Toggler: Hidden on desktop, visible on mobile</span> <span class="c-tag">--&gt;</span>
+        <span class="c-tag">&lt;button</span> <span class="c-attr">class</span>=<span class="c-val">"navbar-toggler"</span> <span class="c-attr">type</span>=<span class="c-val">"button"</span> 
+                <span class="c-attr">data-bs-toggle</span>=<span class="c-val">"collapse"</span> <span class="c-attr">data-bs-target</span>=<span class="c-val">"#navbarNavCollapse"</span>
+                <span class="c-attr">aria-controls</span>=<span class="c-val">"navbarNavCollapse"</span> <span class="c-attr">aria-expanded</span>=<span class="c-val">"false"</span> 
+                <span class="c-attr">aria-label</span>=<span class="c-val">"Toggle navigation"</span><span class="c-tag">&gt;</span>
+            <span class="c-tag">&lt;span</span> <span class="c-attr">class</span>=<span class="c-val">"navbar-toggler-icon"</span><span class="c-tag">&gt;&lt;/span&gt;</span>
+        <span class="c-tag">&lt;/button&gt;</span>
+        
+        <span class="c-tag">&lt;!--</span> <span class="c-comment">Collapsible Content: Links and Form</span> <span class="c-tag">--&gt;</span>
+        <span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"collapse navbar-collapse"</span> <span class="c-attr">id</span>=<span class="c-val">"navbarNavCollapse"</span><span class="c-tag">&gt;</span>
+            <span class="c-tag">&lt;ul</span> <span class="c-attr">class</span>=<span class="c-val">"navbar-nav me-auto"</span><span class="c-tag">&gt;</span>
+                <span class="c-tag">&lt;li</span> <span class="c-attr">class</span>=<span class="c-val">"nav-item"</span><span class="c-tag">&gt;</span>
+                    <span class="c-tag">&lt;a</span> <span class="c-attr">class</span>=<span class="c-val">"nav-link active"</span> <span class="c-attr">href</span>=<span class="c-val">"#"</span><span class="c-tag">&gt;</span>Home<span class="c-tag">&lt;/a&gt;</span>
+                <span class="c-tag">&lt;/li&gt;</span>
+            <span class="c-tag">&lt;/ul&gt;</span>
+
+            <span class="c-tag">&lt;!--</span> <span class="c-comment">Inline Form using .d-flex for alignment</span> <span class="c-tag">--&gt;</span>
+            <span class="c-tag">&lt;form</span> <span class="c-attr">class</span>=<span class="c-val">"d-flex"</span> <span class="c-attr">role</span>=<span class="c-val">"search"</span><span class="c-tag">&gt;</span>...<span class="c-tag">&lt;/form&gt;</span>
+        <span class="c-tag">&lt;/div&gt;</span>
+    <span class="c-tag">&lt;/div&gt;</span>
+<span class="c-tag">&lt;/nav&gt;</span>
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Include Bootstrap JS bundle for Toggler and Collapse functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
