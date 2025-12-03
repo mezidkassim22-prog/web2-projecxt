@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findmaximum(a, b, c) {
+            var tempmax;
+
+            if (a >= b) {
+                tempmax = a;
+            } else {
+                tempmax = b;
+            }
+
+            if (c >= tempmax) {
+                tempmax = c;
+            }
+
+            return tempmax; // must be inside the function
+        }
+
+        document.write("The maximum value is: " + findmaximum(10, 20, 30));
+    </script>
+</body>
+</html>

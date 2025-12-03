@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+    function confirmAction() {
+        var userConfirmed = confirm("Do you want to proceed?");
+        if (userConfirmed) {
+            document.write("User chose to proceed.");
+        } else {
+            document.write("User canceled the action.");
+        }
+    }
+
+    // Call the function so it runs
+    confirmAction();
+ </script>   
+</body>
+</html>

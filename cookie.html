@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persistent Cookie Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1 {
+            color: #d32f2f;
+        }
+        input {
+            padding: 8px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 8px 12px;
+            font-size: 16px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to JavaScript Cookies Demo</h1>
+
+    <input type="text" id="username" placeholder="Enter your name">
+    <button onclick="setCookie()">Save Name</button>
+    <button onclick="deleteCookie()">Delete Name</button>
+
+    <p id="output"></p>
+
+    <script>
+        // Function to set a cookie (expires in 7 days)
+        function setCookie() {
+            var name = document.getElementById("username").value.trim();
+            if (name === "") {
+                document.getElementById("output").innerText = "Please enter a valid name!";
+                return;
+            }
+            var d = new Date();
+            d.setTime(d.getTime() + (7*24*60*60*1000)); // 7 days
+            document.cookie = "username=" + encodeURIComponent(name) + ";expires=" + d.toUTCString() + ";path=/";
+            showCookie();
+            document.getElementById("username").value = "";
+        }
+
+        // Function to read the username cookie
+        function getCookie(name) {
+            var cookieArr = document.cookie.split("; ");
+            for (var i = 0; i < cookieArr.length; i++) {
+                var pair = cookieArr[i].split("=");
+                if (pair[0] === name) {
+                    return decodeURIComponent(pair[1]);
+                }
+            }
+            return null;
+        }
+
+        // Function to display greeting
+        function showCookie() {
+            var user = getCookie("username");
+            if (user) {
+                document.getElementById("output").innerText = "Hello, " + user + "! Welcome back.";
+            } else {
+                document.getElementById("output").innerText = "No saved name found. Please enter your name.";
+            }
+        }
+
+        // Function to delete cookie
+        function deleteCookie() {
+            document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            showCookie();
+        }
+
+        // Show cookie on page load
+        window.onload = showCookie;
+    </script>
+</body>
+</html>
