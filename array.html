@@ -6,22 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-<script>
-        function findmaximum( a ,b ,c) {
-        var tempmax;
-        if (a >= b) {
-        tempmax = a;
-        } else {
-        tempmax = b;
-        }
-        if(c >= tempmax) {
-            tempmax = c;
-        }
-             return tempmax;
-        }   
     
-document.write("The maximum value is: " + findmaximum(10,20,30));
+<script type="text/javascript">
+    var colors = ["green", "red", "yellow", "blue"];
+    var red = colors[1];
+    for (var i = 0; i < colors.length; i++) {
+        document.write(colors[i] + "<br>");
+    }
 
-</script>
+    document.write("<span style='color:red;'>" + red + "</span>");
+        </script>
 </body>
 </html>
